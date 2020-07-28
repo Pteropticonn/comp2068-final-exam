@@ -42,9 +42,9 @@ passport.deserializeUser(User.deserializeUser());
 const routes = require('./routes.js');
 app.use('/api', routes);
 
-app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(express.static(path.join(__dirname, 'build')));
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname+'/client/build/index.html'));
+  res.sendFile(path.join(__dirname+'/build/index.html'));
 });
 
 // Start our server
